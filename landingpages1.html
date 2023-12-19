@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Landing Page</title>
+<script src="https://unpkg.com/vue@3"></script>
+<script src="https://github.com/Cool31/VueJs_projects/blob/707678b1e2c86ce514023634f4495741e8ec870d/homepage.js"></script>
+//<style>
+.navigation{
+    ......
+}
+
+.pages{....}
+,navigation ul li{
+display:inline-block; 
+}
+
+input, label, button{
+display:block
+}
+
+input, textarea{
+    ......
+}
+</style>
+</head>
+
+<body>
+ //dynamic switch between components & pass data to v-bind:is attr
+  <div id="app">
+ <component v-bind:is="currentPage"></component></div> 
+ 
+<div id="app">
+<div class="navigation">
+ <ul>
+ <li><a href="#home" @click='switchTo("home")'>Home</a></li>
+ <li><a href="#aboutus" @click='switchTo("aboutus"")'>About Us</a></li>
+ <li><a href="#contact" @click='switchTo("contact")'>Contact Us</a></li>
+ </ul></div>
+ 
+<div class="pages"> 
+<keep-alive>   <component :is="currentPage"></component></keep-alive>
+</div></div>
+</body>
+</html>
